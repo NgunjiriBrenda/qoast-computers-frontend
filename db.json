@@ -1,0 +1,67 @@
+{
+    "product": [
+        {
+            "id": 1,
+            "name": "HP Laptop",
+            "price": "Ksh 45,000",
+            "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+
+        {
+            "id": 2,
+            "name": "Dell Laptop",
+            "price": "Ksh 52,000",
+            "image": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+        },
+
+        {
+            "id": 3,
+            "name": "MacBook Pro",
+            "price": "Ksh 120,000",
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=726&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+
+        {
+            "id": 4,
+            "name": "Lenovo Laptop",
+            "price": "Ksh 40,000",
+            "image": "https://plus.unsplash.com/premium_photo-1681666713728-9ed75e148617?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }  
+    ],
+    "services": [
+        {
+            "id": 1,
+            "name": "Laptop Repair",
+            "description": "We offer comprehensive laptop repair services including hardware diagnostics, screen replacements, battery replacements, and software troubleshooting to get your device back in optimal condition."
+        },
+        {
+            "id": 2,
+            "name": "Custom PC Building",
+            "description": "Our custom PC building service allows you to design and build a computer tailored to your specific needs, whether for gaming, professional work, or everyday use."
+        },
+        {
+            "id": 3,
+            "title": "Data Recovery",
+            "description": "We provide data recovery services to help retrieve lost or corrupted files from various storage devices, ensuring your important data is safely restored."
+        },
+        {
+            "id": 4,
+            "title": "Virus Removal",
+            "description": "Our virus removal service effectively eliminates malware, spyware, and other malicious software from your computer, enhancing its performance and security."
+        },
+        {
+            "id": 5,
+            "title": "Laptop Repair",
+            "description": "Fast and reliable laptop repair services for all major brands."
+              
+        },
+        {
+            "id": 6,
+            "title": "Computer Maintenance",
+            "description": "Regular maintenance for optimal perfomance"
+        }
+    ]
+    
+
+}
