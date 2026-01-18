@@ -1,128 +1,133 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 0.5rem;
     box-sizing: border-box;
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
     line-height: 1.6;
-    color:black;
-    background-color:navajowhite;
-
 }
 
-img{
-    max-width: 100%;
-    display: flexbox;
-}
-
-section{
-    padding: 4rem 2rem;
-}
-
-h1, h2, h3{
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-p{
-    color:rgb(21, 22, 22);
-}
-
-header{
-    background-color: brown;
-    color:bisque;
-}
-
-.navbar{
-    max-width: 1500px;
+header,
+main,
+footer{
+    max-width: 1200px;
     margin: auto;
-    padding: 1rem 2rem;
+    padding: 1rem;
+
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 12px;
-    box-shadow: 0 6px 8px  rgba(0, 0, 0, 0.1);
-    background-color:blueviolet;
+    background: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+   
+
 }
 
-.nav-links{
+nav h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #222;
+}
+
+nav ul{
     list-style: none;
-    display:flex;
-    gap: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
     margin-left: auto;
+
 }
 
-.nav-links a{
-    color: rgb(236, 140, 22);
-    text-decoration: none;
+nav a{
+    text-decoration: solid;
     font-weight: 500;
-    font-size: 1.1rem;
 }
 
-.nav-links a:hover{
-    color: rgb(236, 140, 22);
-    text-decoration: underline;
+nav a:hover{
+    color: #e71f2f;
 }
 
-.login-btn{
-    background: salmon;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: larger;
-    color: violet;
-  
-}
-
-.menu-toggle{
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.services{
-    background:rgba(0, 0, 0, 0.1);
-    text-align: center;
+section{
+    margin-top: 1rem;
 
 }
 
-.services-cards{
-    margin-top: 2rem;
+section h2{
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+#product-list,
+#service-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .card{
-    background: violet;
-    padding: 2rem;
-    border-radius: 6px;
-    box-shadow:rgba(0, 0, 0, 0.1) 0 4px 10px;
-
-
-}
-
-.product-cards{ 
-    margin-top: 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.product-card{
-    background: violet;
+    background: #ffffff;
+    border-radius: 10px;
     padding: 1rem;
-    border-radius: 6px;
-    box-shadow:rgba(0, 0, 0, 0.1) 0 4px 10px;
     text-align: center;
-
 }
 
+.card img{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
+footer{
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+}
 
+.login-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
 
+.login-container{
+    background: rgb(196, 134, 127);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
 
+.login-container input {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 1rem;
+}
 
+.login-container button{
+    width: 60%;
+    padding: 10px;
+    background:#e71f2f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.login-container button:hover{
+    background: #c41c24;
+}
+
+.login-container input{
+    display: flex;
+    margin-bottom: 1rem;
+}
