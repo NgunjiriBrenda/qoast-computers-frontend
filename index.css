@@ -11,3 +11,118 @@ body{
     background-color:navajowhite;
 
 }
+
+img{
+    max-width: 100%;
+    display: flexbox;
+}
+
+section{
+    padding: 4rem 2rem;
+}
+
+h1, h2, h3{
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+p{
+    color:rgb(21, 22, 22);
+}
+
+header{
+    background-color: brown;
+    color:bisque;
+}
+
+.navbar{
+    max-width: 1500px;
+    margin: auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 6px 8px  rgba(0, 0, 0, 0.1);
+    background-color:blueviolet;
+}
+
+.nav-links{
+    list-style: none;
+    display:flex;
+    gap: 2.5rem;
+    margin-left: auto;
+}
+
+.nav-links a{
+    color: rgb(236, 140, 22);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover{
+    color: rgb(236, 140, 22);
+    text-decoration: underline;
+}
+
+.login-btn{
+    background: salmon;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: larger;
+    color: violet;
+  
+}
+
+.menu-toggle{
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.services{
+    background:rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+
+.services-cards{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card{
+    background: violet;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow:rgba(0, 0, 0, 0.1) 0 4px 10px;
+
+
+}
+
+.product-cards{ 
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card{
+    background: violet;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow:rgba(0, 0, 0, 0.1) 0 4px 10px;
+    text-align: center;
+
+}
+
+
+
+
+
+
