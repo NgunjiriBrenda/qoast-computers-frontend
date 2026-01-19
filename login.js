@@ -1,9 +1,18 @@
-const loginForm = document.getElementById("loginForm");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("loginForm");
 
-loginForm.addEventListener("submit", function(e){
-    e.preventDefault();
-    localStorage.setItem("isLoggedIn", "true");
+    if (!form) {
+        console.error("Login form not found");
+        return;
+    }
 
-    window.location.href = "index.html";
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-})
+        // Simulated login
+        localStorage.setItem("isLoggedIn", "true");
+
+        // Redirect to homepage
+        window.location.href = "index.html";
+    });
+});
