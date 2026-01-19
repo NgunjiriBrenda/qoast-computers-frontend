@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("loginForm");
 
-    if (!form) {
-        console.error("Login form not found");
-        return;
-    }
+    if (!form) return; // safety check
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // Simulated login
+        // Simulate login
         localStorage.setItem("isLoggedIn", "true");
 
         // Redirect to homepage
