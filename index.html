@@ -6,8 +6,9 @@
     <title>Qoast Computers</title>
     <link rel="stylesheet" href="./index.css">
 </head>
-<body >
+<body>
 
+  
     <header>
         <nav>
             <h1>Qoast Computers</h1>
@@ -15,37 +16,55 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-        
+                <li><button id="logoutBtn">Logout</button></li>
             </ul>
         </nav>
     </header>
 
+   
     <main>
+
+       
         <section id="products">
             <h2>Our Products</h2>
             <p>Explore our wide range of computers and accessories.</p>
-            <div id="product-list">
 
-            </div>
+            <!-- ADD PRODUCT CONTROLS -->
+            <button id="showProductsForm">+ Add Product</button>
 
+            <form id="productForm" style="display: none;">
+                <input type="text" id="productName" placeholder="Product name" required />
+                <input type="text" id="productPrice" placeholder="Price" required />
+                <input type="text" id="productImage" placeholder="Image URL" required />
+                <button type="submit">Save Product</button>
+            </form>
+
+           
+            <div id="product-list"></div>
         </section>
+
+       
         <section id="services">
             <h2>Our Services</h2>
-            <p>We offer a variety of services to meet your needs. We offer Software & Hardware Training, Computer Sales, Repairs, Accessories, Web & Graphics Designing.</p>
-            <div id="services-list">
+            <p>
+                We offer Software & Hardware Training, Computer Sales, Repairs,
+                Accessories, Web & Graphics Designing.
+            </p>
 
-            </div>
+            <div id="services-list"></div>
         </section>
+
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
         <p>&copy; 2026 Qoast Computers</p>
-        <p>Location: Kitengela Kenya</p>
+        <p>Location: Kitengela, Kenya</p>
         <p>Contact us: +254 726236838</p>
     </footer>
 
- 
+    <!-- ===== SCRIPT ===== -->
     <script src="./index.js"></script>
-    
+
 </body>
 </html>
