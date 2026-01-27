@@ -1,10 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ====== LOGIN CHECK ======
+
+    // ===== LOGIN CHECK =====
     if (localStorage.getItem("isLoggedIn") !== "true") {
         window.location.href = "login.html";
     }
 
-    // ====== SERVICES ======
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "login.html";
+        });
+    }
+
+    // ===== IMAGE MODAL ELEMENTS =====
+    const imageModal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+
+    // ===== SERVICES =====
     const servicesContainer = document.getElementById("services-list");
 
     fetch("http://localhost:3000/services")
@@ -12,14 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             let services = [];
 
-            // Check if JSON has services array
+            // Safe check for JSON structure
             if (Array.isArray(data)) {
                 services = data;
             } else if (data.services && Array.isArray(data.services)) {
                 services = data.services;
             } else {
-                console.warn("Services data not found", data);
                 servicesContainer.innerHTML = "<p>No services found.</p>";
+                console.warn("Unexpected services format:", data);
                 return;
             }
 
@@ -29,11 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const card = document.createElement("div");
                 card.className = "card";
 
-                // Use 'title' if exists, otherwise 'name'
-                const title = service.title || service.name || "Untitled Service";
-
                 card.innerHTML = `
-                    <h3>${title}</h3>
+                    <h3>${service.title || service.name}</h3>
                     <p>${service.description}</p>
                 `;
 
@@ -42,47 +53,98 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(err => {
             servicesContainer.innerHTML = "<p>Failed to load services.</p>";
-            console.error(err);
+            console.error("Services error:", err);
         });
 
-    // ====== PRODUCTS ======
+    // ===== PRODUCTS =====
     const productContainer = document.getElementById("product-list");
+    const API_URL = "http://localhost:3000/product";
 
-    fetch("http://localhost:3000/product")
-        .then(res => res.json())
-        .then(data => {
-            let products = [];
+    function fetchProducts() {
+        fetch(API_URL)
+            .then(res => res.json())
+            .then(products => {
+                productContainer.innerHTML = "";
 
-            // Check if JSON has product array
-            if (Array.isArray(data)) {
-                products = data;
-            } else if (data.product && Array.isArray(data.product)) {
-                products = data.product;
-            } else {
-                console.warn("Products data not found", data);
-                productContainer.innerHTML = "<p>No products found.</p>";
-                return;
-            }
+                products.forEach(product => {
+                    const card = document.createElement("div");
+                    card.className = "card";
 
-            productContainer.innerHTML = "";
+                    card.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>${product.price}</p>
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    `;
 
-            products.forEach(product => {
-                const card = document.createElement("div");
-                card.className = "card";
+                    // ===== IMAGE CLICK → EXPAND =====
+                    const img = card.querySelector("img");
+                    img.addEventListener("click", () => {
+                        modalImage.src = product.image;
+                        imageModal.style.display = "flex";
+                    });
 
-                card.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}" />
-                    <h3>${product.name}</h3>
-                    <p>${product.price}</p>
-                `;
+                    // ===== DELETE =====
+                    card.querySelector(".delete-btn")
+                        .addEventListener("click", () => deleteProduct(product.id));
 
-                productContainer.appendChild(card);
+                    // ===== UPDATE =====
+                    card.querySelector(".edit-btn")
+                        .addEventListener("click", () => editProduct(product));
+
+                    productContainer.appendChild(card);
+                });
+            })
+            .catch(err => {
+                productContainer.innerHTML = "<p>Failed to load products.</p>";
+                console.error(err);
             });
+    }
+
+    // ===== DELETE PRODUCT =====
+    function deleteProduct(id) {
+        fetch(`${API_URL}/${id}`, {
+            method: "DELETE"
         })
-        .catch(err => {
-            productContainer.innerHTML = "<p>Failed to load products.</p>";
-            console.error(err);
-        });
+        .then(() => fetchProducts())
+        .catch(err => console.error(err));
+    }
+
+    // ===== UPDATE PRODUCT =====
+    function editProduct(product) {
+        const newName = prompt("Edit product name:", product.name);
+        const newPrice = prompt("Edit product price:", product.price);
+        const newImage = prompt("Edit image URL:", product.image);
+
+        if (!newName || !newPrice || !newImage) return;
+
+        fetch(`${API_URL}/${product.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: newName,
+                price: newPrice,
+                image: newImage
+            })
+        })
+        .then(() => fetchProducts())
+        .catch(err => console.error(err));
+    }
+
+    // ===== CLOSE IMAGE MODAL =====
+    closeModal.addEventListener("click", () => {
+        imageModal.style.display = "none";
+    });
+
+    imageModal.addEventListener("click", (e) => {
+        if (e.target === imageModal) {
+            imageModal.style.display = "none";
+        }
+    });
+
+    // ===== INITIAL LOAD =====
+    fetchProducts();
 });
-
-
