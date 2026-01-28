@@ -1,4 +1,4 @@
-🛒 Product Management System (CRUD App)
+ Product Management System (CRUD App)
 
 A simple and responsive Product Management System built with HTML, CSS, and JavaScript, powered by a JSON Server as a mock backend.
 This project allows an admin to add, view, and manage products dynamically using real API requests.
@@ -6,36 +6,36 @@ This project allows an admin to add, view, and manage products dynamically using
 
 .
 
-🚀 Features
+ Features
 
-🔐 Basic authentication check using localStorage
+ Basic authentication check using localStorage
 
-📦 Fetch and display products from a REST API
+ Fetch and display products from a REST API
 
-➕ Add new products dynamically
+ Add new products dynamically
 
-🎨 Clean and modern UI styling
+ Clean and modern UI styling
 
-⚡ Uses fetch() for API communication
+Uses fetch() for API communication
 
-🧪 Mock backend with json-server
+ Mock backend with json-server
 
 
 .
 
-🚀 Features
+ Features
 
-🔐 Basic authentication check using localStorage
+ Basic authentication check using localStorage
 
-📦 Fetch and display products from a REST API
+ Fetch and display products from a REST API
 
-➕ Add new products dynamically
+ Add new products dynamically
 
-🎨 Clean and modern UI styling
+ Clean and modern UI styling
 
-⚡ Uses fetch() for API communication
+ Uses fetch() for API communication
 
-🧪 Mock backend with json-server
+ Mock backend with json-server
 ├── index.html
 ├── login.html
 ├── css/
@@ -45,18 +45,18 @@ This project allows an admin to add, view, and manage products dynamically using
 ├── db.json
 └── README.md
 
-⚙️ Setup & Installation
-1️⃣ Clone the Repository
+ Setup & Installation
+1️ Clone the Repository
 git clone https://github.com/your-username/product-management-system.git
 cd product-management-system
 
-2️⃣ Install JSON Server
+2️ Install JSON Server
 
 Make sure Node.js is installed, then run:
 
 npm install -g json-server
 
-3️⃣ Start the JSON Server
+3️ Start the JSON Server
 json-server --watch db.json --port 3000
 
 
@@ -66,13 +66,13 @@ http://localhost:3000/products
 
 http://localhost:3000/services (if included)
 
-4️⃣ Run the Project
+4️ Run the Project
 
 Simply open index.html in your browser.
 
-⚠️ Ensure JSON Server is running before interacting with the app.
+Ensure JSON Server is running before interacting with the app.
 
-🔐 Authentication Logic
+ Authentication Logic
 
 This project uses a simple authentication check:
 
@@ -83,7 +83,7 @@ if (localStorage.getItem("isLoggedIn") !== "true") {
 
 Only logged-in users can access the product dashboard.
 
-➕ Adding a Product
+ Adding a Product
 
 Click the “Add Product” button
 
@@ -93,21 +93,21 @@ Submit the form
 
 The product is saved via a POST request and displayed instantly
 
-🌱 Future Improvements
+ Future Improvements
 
-✏️ Edit product functionality
+ Edit product functionality
 
-🗑️ Delete products
+ Delete products
 
-🔍 Search & filter products
+ Search & filter products
 
-🔔 Toast notifications
+ Toast notifications
 
-🧑‍💼 Role-based authentication
+ Role-based authentication
 
-📱 Improved mobile responsiveness
+ Improved mobile responsiveness
 
-👩‍💻 Author
+Author
 
 Brenda Ngunjiri
 Software Engineering Student
