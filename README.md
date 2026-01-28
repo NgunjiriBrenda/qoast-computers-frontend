@@ -111,5 +111,5 @@ Author
 
 Brenda Ngunjiri
 Software Engineering Student
-Passionate about building clean, functional, and user-friendly web applications ✨
+Passionate about building clean, functional, and user-friendly web applications 
 
